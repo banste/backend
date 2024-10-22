@@ -2,4 +2,9 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html  # Ajusta la ruta según tu servidor
+    destination: /var/www/html  # Ajusta según tu entorno
+hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
+      timeout: 300
+      runas: root
