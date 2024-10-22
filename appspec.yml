@@ -4,7 +4,11 @@ files:
   - source: /
     destination: /var/www/html  # Ajusta según tu entorno
 hooks:
-  BeforeInstall:
+  AfterInstall:
     - location: scripts/install_dependencies.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/start_pm2.sh
       timeout: 300
       runas: root
