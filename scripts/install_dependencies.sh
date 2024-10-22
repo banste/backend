@@ -1,2 +1,3 @@
 #!/bin/bash
-npm install
+cd /var/www/html  
+npm install       
